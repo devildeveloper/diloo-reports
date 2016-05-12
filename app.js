@@ -3,7 +3,7 @@ const Hapi = require('hapi');
 const Path = require('path');
 const Hoek = require('hoek');
 const Ctrl = require('./api/controllers');
-
+const Joi  = require('joi');
 const server = new Hapi.Server();
 server.connection({
 	 port: process.env.PORT || 3000 
@@ -99,6 +99,31 @@ server.register(
 					, plugins: { 'hapi-auth-cookie': { redirectTo: false } }
 				}
 			}
+			
 			,{ method: 'GET' ,path: '/company/list',config: { handler : Ctrl.Company.list } }
+			
+			,{ method: 'GET' ,path: '/company/find'
+				,config: { 
+					handler : Ctrl.Company.find
+					,validate:{
+						query:{
+							id:Joi.string().min(6).required()
+						}
+					}
+				}
+			}
+			,{ method: 'GET' ,path: '/company/activity'
+				,config: { 
+					handler : Ctrl.Company.activity
+					,validate:{
+						query:{
+							code:Joi.string().min(3).max(3).required()
+							,start:Joi.date().format('YYYY-MM-DD').min('2015-01-01').max('now').required()
+							,end  :Joi.date().format('YYYY-MM-DD').min('2015-01-01').max('now').required()
+							,companies:Joi.array().sparse(false).items(Joi.string()).min(1).unique()
+						}
+					}
+				}
+			}			
 		]);	
 	});
