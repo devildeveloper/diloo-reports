@@ -29,3 +29,16 @@ body{
 	margin: 0 auto;
 	font-size: 1.1rem;
 }
+.circle{
+	margin-left: 188px;
+}
+.userMenu p{color: white;}
+.userMenu .circle{
+	width: 38px;
+	height: 38px;
+	margin-right: 10px;
+}
+.userMenu > *{
+	display: inline-block;
+	vertical-align: middle;
+}
