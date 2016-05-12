@@ -35,11 +35,12 @@ const login =  (request, reply) => {
 								request.server.app.cache.set(admin.id, { account: admin }, 0, (err) => {
 									if (err) {
 										return reply(err);
+									}else{
+										request.cookieAuth.set({ sid: admin.id });
+										return reply.redirect('/');
 									}
-									request.cookieAuth.set({ sid: admin.id });
-									return reply.redirect('/');
 								});									
-								return reply(admin)
+								//return reply(admin)
 							}else{
 								return reply('not fount')
 							}
