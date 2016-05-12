@@ -16,13 +16,14 @@ server.register(
 		,{
 			register:require('hapi-sequelize')
 			,options:{
-				database:'demo'
+				//host:'40.76.4.149'
+				database:'diloo'
 				,user:'postgres'
 				,pass:''
 				,dialect:'postgres'
 				,port:5432
 				,models:'api/models/**/*.js'
-				//,logging:false
+				,logging:false
 				,sequelize:{
 					define:{
 						underscoreAll:true
@@ -83,6 +84,7 @@ server.register(
 		//routes
 		server.route([
 			{ method: 'GET', path: '/', config: { handler: Ctrl.Auth.home } },
+			
 			{ method: ['GET', 'POST'], path: '/login'
 				,config: {
 					handler: Ctrl.Auth.login, auth: { mode: 'try' }
@@ -97,5 +99,6 @@ server.register(
 					, plugins: { 'hapi-auth-cookie': { redirectTo: false } }
 				}
 			}
+			,{ method: 'GET' ,path: '/company/list',config: { handler : Ctrl.Company.list } }
 		]);	
 	});
