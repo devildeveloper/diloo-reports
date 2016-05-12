@@ -90,5 +90,12 @@ server.register(
 				} 
 			}
 			,{ method: 'GET', path: '/logout', config: { handler: Ctrl.Auth.logout } }
+			
+			,{ method: 'GET' ,path: '/start',  config: { 
+					handler:Ctrl.Ragnarok.start
+					,auth:{mode:'try'}
+					, plugins: { 'hapi-auth-cookie': { redirectTo: false } }
+				}
+			}
 		]);	
 	});
