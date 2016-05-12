@@ -1,0 +1,15 @@
+{{!< layout/default}}
+{{> menu}}
+<form class="ui form" method="POST" action="/login">
+	<img src="http://localhost:5000/assets/img/logo.png">
+	<div class="field">
+		<input type="email" placeholder="Email" required name="email">
+	</div>
+	<div class="field">
+		<div class="ui icon input">
+			<input type="password" name="password" placeholder="Contraseña" required>
+			<i class="icon link	hide"></i>
+		</div>
+	</div>
+	<button class="ui button yellow" type="submit">Ingresar</button>
+</form>
