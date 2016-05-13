@@ -10,7 +10,7 @@ const logout = (request, reply) => {
 };
 const home =  (request, reply)=> {
 	if (request.auth.isAuthenticated) {
-        return reply.view('dashboard');//dashboard
+        return reply.view('dashboard',null,{ layout: 'inherit' });//dashboard
     }else{
 		reply.view('index'); //login
 	}
@@ -18,7 +18,7 @@ const home =  (request, reply)=> {
 const login =  (request, reply) => {
    if(request.method==='get'){
 	    if (request.auth.isAuthenticated) {
-       		return reply.view('dashboard');
+       		return reply.view('dashboard',null,{ layout: 'inherit' });
     	}else{
 			return reply.view('index');	
 		}
