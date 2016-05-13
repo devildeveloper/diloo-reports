@@ -1,4 +1,4 @@
-<header style="background-color:#0065b5;">
+<header>
     <div class="ui padded grid">
       <div class="two column row">
         <div class="left floated column">
@@ -8,18 +8,18 @@
         </div>
         <div class="right floated column userMenu right aligned">
           <div class="circle">
-            <img src="{{assets}}/assets/img/user.jpg" class="ui avatar image" style="width: 40px;height: 40px;">
+            <img src="{{assets}}/assets/img/user.jpg" id="uavatar" class="ui avatar image">
           </div>
           <div class="userInfo">
             <p>demo</p>
           </div>
-          <div style="margin-left: 10px;margin-right: 30px;" class="ui inline dropdown changeStatus" tabindex="0">
-            <div class="text" style="color: white;"> 
+          <div id="drw" class="ui inline dropdown changeStatus" tabindex="0">
+            <div class="text" id="ft"> 
               <img src="{{assets}}/assets/img/green.png" style="width:auto;height:auto;" class="ui avatar image">
               Conectado
             </div>
 
-            <i style="color:white" class="dropdown icon"></i>
+            <i id="fw" class="dropdown icon"></i>
             <div class="menu transition hidden" tabindex="-1">
               <div class="item active selected">
                   <img src="{{assets}}/assets/img/green.png" style="width:auto;height:auto;" class="ui avatar image">
