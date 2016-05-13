@@ -8,6 +8,9 @@ body{
 header{
 	background-color:#0065b5;
 }
+.whitec{
+	color: white;
+}
 #uavatar{
 	width: 40px;height: 40px;
 }
