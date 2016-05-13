@@ -46,6 +46,9 @@ server.register(
 			,layoutPath:'views/templates/layout'
 			,partialsPath: 'views/templates/partials'
 			,layout:'layout'
+			,context:{
+				assets:'http://localhost:5000'
+			}
 		});		
 		//auth cookie
 		const cache = server.cache({ segment: 'sessions', expiresIn: 3 * 24 * 60 * 60 * 1000 });
