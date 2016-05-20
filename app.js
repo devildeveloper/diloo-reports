@@ -17,7 +17,8 @@ server.register(
 			register:require('hapi-sequelize')
 			,options:{
 				//host:'40.76.4.149'
-				database:'diloo'
+                host:'localhost'
+				,database:'diloo'
 				,user:'postgres'
 				,pass:''
 				,dialect:'postgres'
@@ -101,10 +102,8 @@ server.register(
 					,auth:{mode:'try'}
 					, plugins: { 'hapi-auth-cookie': { redirectTo: false } }
 				}
-			}
-			
-			,{ method: 'GET' ,path: '/company/list',config: { handler : Ctrl.Company.list } }
-			
+            }
+			//company
 			,{ method: 'GET' ,path: '/company/find'
 				,config: { 
 					handler : Ctrl.Company.find
@@ -123,10 +122,13 @@ server.register(
 							code:Joi.string().min(3).max(3).required()
 							,start:Joi.date().format('YYYY-MM-DD').min('2015-01-01').max('now').required()
 							,end  :Joi.date().format('YYYY-MM-DD').min('2015-01-01').max('now').required()
-							,companies:Joi.array().sparse(false).items(Joi.string()).min(1).unique()
+							,company:Joi.string()
 						}
 					}
 				}
-			}			
+			}            //category	
+            ,{ method: 'GET' ,path: '/company/list',config: { handler : Ctrl.Company.list } }
+            ,{ method: 'GET' ,path: '/category/list',config: { handler : Ctrl.Category.list } }
+            		
 		]);	
 	});
