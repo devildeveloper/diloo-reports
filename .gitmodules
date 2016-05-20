@@ -1,0 +1,3 @@
+[submodule "views/assets/modules/semantic-ui-daterangepicker"]
+	path = views/assets/modules/semantic-ui-daterangepicker
+	url = https://github.com/BreadMaker/semantic-ui-daterangepicker
