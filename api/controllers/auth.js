@@ -31,6 +31,7 @@ const login =  (request, reply) => {
 				var Admin = request.models.Admin;
 				Admin.find({email:request.payload.email,password:request.payload.password})
 						.then(function(admin){
+                            console.log(admin)
 							if(admin){
 								request.server.app.cache.set(admin.id, { account: admin }, 0, (err) => {
 									if (err) {
@@ -45,7 +46,7 @@ const login =  (request, reply) => {
 								return reply('not fount')
 							}
 						})
-						.error(function(e){
+						.catch(function(e){
 							return	reply(e)
 						});			
 			}

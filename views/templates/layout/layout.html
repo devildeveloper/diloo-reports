@@ -10,7 +10,17 @@
 	<link rel="stylesheet" type="text/css" href="{{assets}}/assets/css/main.css">
 	<script type="text/javascript" src="{{assets}}/assets/js/jquery-1.12.3.min.js"></script>
 	<script type="text/javascript" src="{{assets}}/assets/semantic/semantic.min.js"></script>
-	<script type="text/javascript" src="{{assets}}/assets/js/main.js"></script>	
+	<script>
+        function mostrar(){
+            var box = document.querySelector("[name='password']") ;
+            var attr = box.getAttribute('type');
+            if(attr=== "password"){
+                box.setAttribute('type','text')
+            }else{
+                box.setAttribute('type','password')
+            }
+        }
+    </script>
 </head>
 <body>
 		{{{content}}}

@@ -9,15 +9,36 @@
 	<link rel="stylesheet" type="text/css" href="{{assets}}/assets/semantic/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="{{assets}}/assets/semantic/components/dropdown.min.css">
 	<link rel="stylesheet" type="text/css" href="{{assets}}/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="{{assets}}/assets/modules/semantic-ui-daterangepicker/daterangepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="{{assets}}/assets/modules/semantic-ui-daterangepicker/daterangepicker.min.css.map">    
 	<script type="text/javascript" src="{{assets}}/assets/js/jquery-1.12.3.min.js"></script>
 	<script type="text/javascript" src="{{assets}}/assets/semantic/semantic.min.js"></script>
+    <script src="{{assets}}/assets/modules/semantic-ui-daterangepicker/moment.min.js"></script>
     <script type="text/javascript" src="{{assets}}/assets/semantic/components/dropdown.min.js"></script>
+    <script src="{{assets}}/assets/modules/semantic-ui-daterangepicker/daterangepicker.min.js"></script>
+    <script src="{{assets}}/assets/modules/semantic-ui-daterangepicker/daterangepicker.min.js.map"></script>
 	<script type="text/javascript" src="{{assets}}/assets/js/main.js"></script>	
 </head>
 <body>
 	<main>
 			{{{content}}}
+            <company-tickets-inrange></company-tickets-inrange>
 	</main>
+    <script src="https://rawgit.com/riot/riot/master/riot%2Bcompiler.min.js"></script>
+    <script src="{{assets}}/assets/components/company-tickets-inrange.tag" type="riot/tag"></script>
+    <script>
+        function init(){
+            riot.mount('todo', {
+            title: 'I want to behave!',
+            items: [
+                { title: 'Avoid excessive caffeine', done: true },
+                { title: 'Hidden item',  hidden: true },
+                { title: 'Be less provocative'  },
+                { title: 'Be nice to people' }
+            ]
+            })
+        }
+    </script>    
 </body>
 </html>
 <!-- for all pages except login -->

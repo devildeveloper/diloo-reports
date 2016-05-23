@@ -48,7 +48,7 @@ server.register(
 			,partialsPath: 'views/templates/partials'
 			,layout:'layout'
 			,context:{
-				assets:'http://localhost:5000'
+				assets:'http://localhost:31338'
 			}
 		});		
 		//auth cookie

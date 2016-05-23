@@ -7,18 +7,12 @@
             <div class="ui secondary menu">
                 <div class="left item" style="padding-left:0;">
                     <select class="ui  search dropdown" multiple="">
-                           <option value="">Select companies</option>
+                           <option value="">Select Company</option>
                     </select>
                </div>                
-                <div class="right item">
-                    <div class="ui icon input">
-                        <input type="text" placeholder="Fecha de inicio" ng-model="start_" id="admin_report_start" class="hasDatepicker ng-pristine ng-untouched ng-valid">
-                            <i class="calendar icon"></i>
-                    </div>
-               </div>
                <div class="right item">
                    <div style="margin-right:20px;" class="ui icon input">
-                       <input type="text" placeholder="Fecha de fin" ng-model="end_" id="admin_report_end" class="hasDatepicker ng-pristine ng-untouched ng-valid">
+                       <input type="text" placeholder="Rango de fechas" id="admin_report_date_range" >
                             <i class="calendar icon"></i>
                    </div>
                    <button type="button" ng-click="companies.activity()" class="ui primary right labeled icon button">

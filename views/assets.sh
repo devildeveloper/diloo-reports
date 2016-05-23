@@ -1,1 +1,1 @@
-python -m SimpleHTTPServer 5000
+python server.py
